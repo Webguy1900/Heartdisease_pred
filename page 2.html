@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://heart-disease-pred-v1.herokuapp.com/submit -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <!-- Gooogle Font -->
+    <link href="./page 2_files/css2" rel="stylesheet">
+	
+    <!-- Stylesheet -->
+	<style>
+	
+		*,
+		*:before,
+		*:after {
+		  padding: 0;
+		  margin: 0;
+		  box-sizing: border-box;
+		}
+		body{
+					min-height: 100vh;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background: url(/static//hm.jpg);
+					background-blend-mode: overlay;
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+
+		.container{
+				position: relative;
+				max-width: 750px;
+				width: 100%;
+				opacity : 89%;
+				border-radius: 6px;
+				padding: 30px;
+				margin: 5px 15px;
+				background-color: #fff;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+				}
+
+
+		.circular-progress {
+			  position: relative;
+			  height: 75%;
+			  width: 75%;
+			  border-radius: 50%;
+			  margin-top:8%;
+			  margin-left:13%;
+			  margin-right:12%;
+			  margin-bottom:6%;
+			  display: grid;
+			  place-items: center;
+			  background-image: linear-gradient(to right, rgba(45,80,0,0), rgba(150,0,0,0.5));
+		}
+		.circular-progress:before {
+			  content: "";
+			  position: absolute;
+			  height: 80%;
+			  width: 80%;
+			  background-color: #ffffff;
+			  border-radius: 50%;
+		}
+		.value-container {
+			  position: relative;
+			  font-family: "Poppins", sans-serif;
+			  font-size: 40px;
+			  color: #231c3d;
+
+		}
+
+
+		.v-c{
+				width: 100%;
+				margin: 10px;
+			}
+
+		.v-c button{
+					
+					width: 100%;
+					padding: 5px 5px;
+					font-size: 20px;
+					background-color: #fff;
+					border-radius: 25px ;
+					box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+					place-items: center;
+				}
+
+		.v-c-2{
+				width: 100%;
+				margin: 4%;
+				font-size: 20px;
+				background-color: #fff;
+				border-radius: 25px ;
+				box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+				place-items: center;
+
+			}
+
+
+			.v-c-2 button{
+					
+					width: calc(100% / 5 - 5px);
+					padding: 5px 5px;
+					font-size: 20px;
+					border-radius: 6px;
+					background-color: #fff;
+					border-radius: 25px ;
+					box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+					place-items: center;
+				}
+			.v-c-2: after{
+				content = ";
+				clear : both;
+				display: table;
+			}
+
+
+
+
+		#button{
+				margin-left: 12%;
+				height: 25px;
+				width: 30%;}
+
+
+		@media (max-width: 700px) {
+		.container{
+				position: relative;
+				height: auto;
+				width: 100%;
+				opacity : 89%;
+				border-radius: 6px;
+				padding: 30px;
+				margin: 5px 15px;
+				background-color: #fff;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+				}
+
+
+		.circular-progress {
+			  position: relative;
+			  width: 80%;
+			  height: 0;
+			  padding-bottom: 80%;
+			  border-radius: 50%;
+			  margin-top:8%;
+			  margin-left:13%;
+			  margin-right:12%;
+			  margin-bottom:6%;
+			  display: grid;
+			  place-items: center;
+				align-content: center;
+			  align-items: center;
+			  text-align: center;
+			  background-image: linear-gradient(to right, rgba(45,80,0,0), rgba(150,0,0,0.5));}
+
+			.value-container {
+			  position: relative;
+			  font-family: "Poppins", sans-serif;
+			  font-size: 50px;
+			  color: #231c3d;
+			  padding-top: 100%;
+			}
+
+
+			 .v-c-2{
+				width: 100%;
+				margin: 4%;
+				font-size: 20px;
+				background-color: #fff;
+				border-radius: 25px ;
+				box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+				place-items: center;
+
+			}
+
+
+			.v-c-2 button{
+					
+					width: calc(100% / 3 - 5px);
+					padding: 5px 5px;
+					font-size: 20px;
+					border-radius: 6px;
+					background-color: #fff;
+					border-radius: 25px ;
+					box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+					place-items: center;
+					align-items: center;
+
+				}
+			.v-c-2: after{
+				content = ";
+				clear : both;
+				display: table;
+			}
+
+		}
+
+		@media (max-width: 400px) {
+			 .v-c-2{
+				width: 100%;
+				margin: 4%;
+				font-size: 15px;
+				background-color: #fff;
+				border-radius: 25px ;
+				box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+				place-items: center;
+
+			}
+
+
+			.v-c-2 button{
+					
+					width: calc(100% - 10px);
+					padding: 5px 5px;
+					font-size: 20px;
+					border-radius: 6px;
+					background-color: #fff;
+					border-radius: 25px ;
+					box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+					place-items: center;
+					align-items: center;
+
+				}
+			.v-c-2: after{
+				content = ";
+				clear : both;
+				display: table;
+			}
+			.value-container{
+			  position: relative;
+			  font-family: "Poppins", sans-serif;
+			  font-size: 40px;
+			  color: #231c3d;
+			  padding-top: 100%;
+			}
+
+		}
+
+
+	</style>
+		
+  </head>
+  <body>
+
+	
+	
+  	<div class="container">
+      	
+
+			<div class="v-c">	
+				<button> Risk of getting Heart Disease : `47%`</button>
+			</div>
+
+			<div class="circular-progress" style="background: conic-gradient(rgb(255, 0, 0) 169.2deg, rgb(255, 255, 255) 169.2deg);">
+        <div class="value-container">47%</div>
+      </div>
+    
+			<div class="v-c-2">	
+				<button id="Mild"> Mild</button>
+				<button id="Moderate"> Moderate</button>
+				<button id="Elevated" style="background: rgb(152, 251, 152); color: black;"> Elevated</button>
+				<button id="Severe"> Severe</button>
+				<button id="Extreme"> Extreme</button>
+			</div>
+		
+
+
+			<form action="https://heart-disease-pred-v1.herokuapp.com/submitbin" method="post">
+			<input id="button" type="reset" onclick="location.href = &#39;https://heart-disease-pred-v1.herokuapp.com/&#39;"> 
+			
+			<input id="button" type="submit" value="Multi Class Analysis"></form>
+		</div>
+    <!-- Script -->
+    <script>
+		
+		
+		var progressBar = document.querySelector(".circular-progress");
+		var valueContainer = document.querySelector(".value-container");
+
+		var progressValue = 0;
+		var progressEndValue = 100;
+		var limit = 47;
+		var speed = 50;
+		
+		var Low = document.querySelector(".Low_Medium");	
+
+		var progress = setInterval(() => {
+		  progressValue++;
+		  valueContainer.textContent = `${progressValue}%`;
+		  progressBar.style.background = `conic-gradient(
+			  #ff0000 ${progressValue * 3.6}deg,
+			  #ffffff ${progressValue * 3.6}deg
+			)`;
+			if (progressValue >= limit) {
+			clearInterval(progress);
+		  }
+		}, speed);
+		
+		var Mild = document.getElementById("Mild");
+		var Moderate = document.getElementById("Moderate");
+		var Elevated = document.getElementById("Elevated");
+		var Severe = document.getElementById("Severe");
+		var Extreme = document.getElementById("Extreme");
+
+		
+		if(47 <= 20){
+			
+			Mild.style.background = '#008000';
+			Mild.style.color = 'white';}
+
+		else if((47 > 20) && (47 <= 40)){
+			
+			Moderate.style.background = '#ADFF2F';
+			Moderate.style.color = 'black';}
+
+		else if((47 > 40) && (47 <= 60)){
+			
+			Elevated.style.background = '#98FB98';
+			Elevated.style.color = 'black';}
+			
+		else if((47 > 60) && (47 <= 80)){
+			
+			Severe.style.background = '#F08080';
+			Severe.style.color = 'black';}
+
+		else {
+			Extreme.style.background = '#FF0000';
+			Extreme.style.color = 'white';}
+		
+	</script>
+
+	
+	
+  
+</body></html>

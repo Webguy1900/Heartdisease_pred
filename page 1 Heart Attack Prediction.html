@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://heart-disease-pred-v1.herokuapp.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+	<style>
+		/* ===== Google Font Import - Poppins ===== */
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+		body{
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: url(/static//hm.jpg);
+			background-image: url(/static//hm.jpg),linear-gradient(to right, rgba(45,80,0,0), rgba(150,0,0,0.5));
+			background-blend-mode: overlay;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.container{
+			position: relative;
+			max-width: 1250px;
+			height: auto;
+			width: 100%;
+			opacity : 89%;
+			border-radius: 6px;
+			padding: 30px;
+			margin: 5px 15px;
+			background-color: #fff;
+			box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+		}
+		.container header{
+			position: relative;
+			font-size: 20px;
+			font-weight: 600;
+			color: #333;
+		}
+		.container header::before{
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -2px;
+			height: 3px;
+			width: 27px;
+			border-radius: 8px;
+			background-color: #4070f4;
+		}
+		.container form{
+			position: relative;
+			margin-top: 16px;
+			min-height: 580px;
+			background-color: #fff;
+			overflow: hidden;
+		}
+		.container form .form{
+			position: absolute;
+			background-color: #fff;
+			transition: 0.3s ease;
+		}
+
+		.container form .title{
+			display: block;
+			margin-bottom: 8px;
+			font-size: 16px;
+			font-weight: 500;
+			margin: 6px 0;
+			color: #333;
+		}
+		.container form .fields{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		form .fields .input-field{
+			display: flex;
+			width: calc(100% / 4 - 15px);
+			flex-direction: column;
+			margin: 4px 0;
+		}
+		form .fields .input-button{
+			display: flex;
+			width: calc(100% / 4 - 15px);
+			flex-direction: column;
+			margin: 2px 0;
+		}
+		.input-field label{
+			font-size: 12px;
+			font-weight: 500;
+			color: #2e2e2e;
+		}
+		.input-field input, select{
+			outline: none;
+			font-size: 14px;
+			font-weight: 400;
+			color: #333;
+			border-radius: 5px;
+			border: 1px solid #aaa;
+			padding: 0 15px;
+			height: 42px;
+			margin: 8px 0;
+		}
+		.input-field input :focus,
+		.input-field select:focus{
+			box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+		}
+		
+		
+
+
+
+		@media (max-width: 750px) {
+			.container form{
+				overflow-y: scroll;
+			}
+
+			.container form::-webkit-scrollbar{
+			   display: none;
+			}
+			form .fields .input-field{
+				width: calc(100% / 2 - 15px);
+			}
+
+		}
+
+		@media (max-width: 550px) {
+			form .fields .input-field{
+				width: 100%;
+			}
+			.container form{
+				overflow-y: scroll;}
+			form .fields .input-button{
+				width: calc(100% / 2 - 15px);
+			}
+
+			
+		}
+		
+		@media (max-width: 450px) {
+			.container form{
+				overflow-y: scroll;
+			}
+			
+			form .fields .input-field{
+				width: 90%;
+			}
+			form .fields .input-button{
+				width: 90%;
+			}
+
+		}
+		
+		@media (max-width: 375px) {
+			.container form{
+				overflow-y: scroll;
+			}
+			
+			form .fields .input-field{
+				width: 84%;
+			}
+			form .fields .input-button{
+				width: 84%;
+			}
+
+		}
+		
+	</style>
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="./page 1 Heart Attack Prediction_files/line.css">
+
+    <title>Heart Attack Prediction</title> 
+
+	
+	
+	
+</head>
+<body>
+
+
+    <div class="container">
+        <header>Required Inputs</header>
+
+        <form action="https://heart-disease-pred-v1.herokuapp.com/submit" method="post" id="myform" autocomplete="off">
+            <div class="form first">
+                <div class="details Patient">
+                    <span class="title">Patient Details</span>
+					
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Patient Name</label>
+                            <input type="text" id="UHID" name="UHID" placeholder="Patient Id" required="">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Right Ventricle</label>
+                            <select id="Right Ventricle" name="Right Ventricle">
+								<option value="normal">normal</option>
+                            	<option value="dilated and rvot obstruction">dilated and rvot obstruction</option>
+								<option value="dilated">dilated</option>
+								<option value="not dilated">not dilated</option>
+								<option value="rvh">rvh</option>
+							</select>
+                        </div>
+						<div class="input-field">
+                            <label>IVC</label>
+                            <select id="IVC" name="IVC">
+								<option value="normal">normal</option>
+								<option value="on inspiration size 0.6 cm.">on inspiration size 0.6 cm.</option>
+								<option value="on inspiration size 0.7 cm.">on inspiration size 0.7 cm.</option>
+								<option value="on inspiration size 0.8 cm.">on inspiration size 0.8 cm.</option>
+								<option value="on inspiration size 0.9 cm.">on inspiration size 0.9 cm.</option>
+								<option value="on inspiration size 1.0 cm.">on inspiration size 1.0 cm.</option>
+								<option value="on inspiration size 1.1 cm.">on inspiration size 1.1 cm.</option>
+								<option value="on inspiration size 1.2 cm.">on inspiration size 1.2 cm.</option>
+								<option value="on inspiration size 1.3 cm.">on inspiration size 1.3 cm.</option>
+								<option value="on inspiration size 1.4 cm.">on inspiration size 1.4 cm.</option>
+								<option value="on inspiration size 1.5 cm.">on inspiration size 1.5 cm.</option>
+								<option value="on inspiration size 1.6 cm.">on inspiration size 1.6 cm.</option>
+								<option value="on inspiration size 1.7 cm.">on inspiration size 1.7 cm.</option>
+								<option value="on inspiration size 1.8 cm.">on inspiration size 1.8 cm.</option>
+								<option value="on inspiration size 1.9 cm.">on inspiration size 1.9 cm.</option>
+								<option value="on inspiration size 2.0 cm.">on inspiration size 2.0 cm.</option>
+								<option value="on inspiration size 2.1 cm.">on inspiration size 2.1 cm.</option>
+								<option value="on inspiration size 2.2 cm.">on inspiration size 2.2 cm.</option>
+								<option value="on inspiration size 2.3 cm.">on inspiration size 2.3 cm.</option>
+								<option value="on inspiration size 2.4 cm.">on inspiration size 2.4 cm.</option>
+								<option value="on inspiration size 2.5 cm.">on inspiration size 2.5 cm.</option>
+								<option value="on inspiration size 2.6 cm.">on inspiration size 2.6 cm.</option>	
+							</select>	
+						</div>
+						
+                        <div class="input-field">
+                            <label>Left Ventricle</label>
+                            <select id="Left Ventricle" name="Left Ventricle">
+								<option value="normal">normal</option>
+                            	<option value="concentric lvh">concentric lvh</option>
+								<option value="mild lvh,rwma present">mild lvh,rwma present</option>
+								<option value="mild lvh">mild lvh</option>
+								<option value="rwma present">rwma present</option>
+								<option value="oncentric lvh">oncentric lvh</option>
+								<option value="dilated,global hypokinetic lv">dilated,global hypokinetic lv</option>
+								<option value="mild lvh,mild hypokinetic lv">mild lvh,mild hypokinetic lv</option>
+							</select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Aortic Valve m/sec</label>
+                            <input type="number" id="Aortic Valve m/sec" name="Aortic Valve m/sec" value="1.4" step="0.01" required="">
+                        </div> 	
+
+						<div class="input-field">
+                            <label>EF %</label>
+                            <input type="number" id="EF %" name="EF %" value="64" step="0.01" required="">
+                        </div>						
+
+                        <div class="input-field">
+                            <label>PW(s) cms</label>
+                            <input type="number" id="PW(s) cms" name="PW(s) cms" value="1.15" step="0.01" required="">
+                        </div>
+
+                        <div class="input-field">
+                            <label>IVS(s) cms</label>
+                            <input type="number" id="IVS(s) cms" name="IVS(s) cms" value="1.01" step="0.01" required="">
+                        </div>
+
+ 						<div class="input-field">
+                            <label>Aortic Valve</label>
+                            <select id="Aortic Valve" name="Aortic Valve">
+								<option value="normal">normal</option>
+								<option value="sclerotic">sclerotic</option>
+								<option value="bio prosthetic">bio prosthetic</option>
+								<option value="thickened doming">thickened doming</option>
+								<option value="prosthetic">prosthetic</option>
+								<option value="bicuspid">bicuspid</option>
+								<option value="degenerative calcific">degenerative calcific</option>
+								<option value="calcified">calcified</option>
+							</select>
+                        </div>   
+						<div class="input-field">
+                            <label>PW(d) cms</label>
+                            <input type="number" id="PW(d) cms" name="PW(d) cms" value="1.02" step="0.01" required="">
+                        </div>
+						
+                        <div class="input-field">
+                            <label>Age</label>
+                            <input type="number" id="Age" name="Age" value="24" required="">
+                        </div>
+						<div class="input-field">
+                            <label>IVS(d) cms</label>
+                            <input type="number" id="IVS(d) cms" name="IVS(d) cms" value="1.01" step="0.01" required="">
+                        </div>
+						
+						
+                        <div class="input-field">
+                            <label>ESV ml</label>
+                            <input type="number" id="ESV ml" name="ESV ml" value="28" step="0.01" required="">
+                        </div>
+                        <div class="input-field">
+                            <label>LA cms</label>
+                            <input type="number" id="LA cms" name="LA cms" value="3.1" step="0.01" required="">
+                        </div>
+						
+						<div class="input-field">
+                            <label>Systemic Veins</label>
+                            <select id="Systemic Veins" name="Systemic Veins">
+								<option value="normal">normal</option>
+								<option value="normally collapsing">normally collapsing</option>
+								<option value="minimally collapsing">minimally collapsing</option>
+								<option value="non collapsing ivc on inspiration size 1.1 cm.">non collapsing ivc on inspiration size 1.1 cm</option>
+								<option value="non collapsing ivc on inspiration size 1.3 cm.">non collapsing ivc on inspiration size 1.3 cm</option>
+								<option value="non collapsing ivc on inspiration size 1.5 cm.">non collapsing ivc on inspiration size 1.5 cm</option>
+								<option value="non collapsing ivc on inspiration size 1.7 cm.">non collapsing ivc on inspiration size 1.7 cm</option>
+								<option value="non collapsing ivc on inspiration size 1.9 cm.">non collapsing ivc on inspiration size 1.9 cm</option>
+								<option value="minimally collapsing ivc on inspiration size 1.1 cm.">minimally collapsing ivc on inspiration size 1.1 cm</option>
+								<option value="minimally collapsing ivc on inspiration size 1.3 cm.">minimally collapsing ivc on inspiration size 1.3 cm</option>
+								<option value="minimally collapsing ivc on inspiration size 1.5 cm.">minimally collapsing ivc on inspiration size 1.5 cm</option>
+								<option value="minimally collapsing ivc on inspiration size 1.7 cm.">minimally collapsing ivc on inspiration size 1.7 cm</option>
+								<option value="minimally collapsing ivc on inspiration size 1.9 cm.">minimally collapsing ivc on inspiration size 1.9 cm</option>
+								
+							</select>
+						</div>
+
+                        <div class="input-field">
+                            <label>LVID(s) cms</label>
+                            <input type="number" id="LVID(s) cms" name="LVID(s) cms" value="4.22" step="0.01" required="">
+                        </div>
+						
+                        <div class="input-field">
+                            <label>EDV ml</label>
+                            <input type="number" id="EDV ml" name="EDV ml" value="80" step="0.01" required="">
+                        </div>						
+                        <div class="input-field">
+                            <label>LVID(d) cms</label>
+                            <input type="number" id="LVID(d) cms" name="LVID(d) cms" value="4.22" step="0.01" required="">
+                        </div>	
+
+                        <div class="input-field">
+                            <label>Mitral Valve A m/sec</label>
+                            <input type="number" id="Mitral Valve A m/sec" name="Mitral Valve A m/sec" value="-0.53" step="0.01" required="">
+                        </div>
+						
+						<div class="input-field">
+                            <label>Mitral Valve E m/sec</label>
+                            <input type="number" id="Mitral Valve E m/sec" name="Mitral Valve E m/sec" value="-0.76" step="0.01" required="">
+                        </div>	
+
+						<div class="input-field">
+                            <label>Mitral Valve Summary</label>
+                            <select id="Mitral Valve Summary" name="Mitral Valve Summary">
+                            	<option value="none">none</option>
+								<option value="trivial mr">trivial mr</option>
+								<option value="mild mr">mild mr</option>
+								<option value="moderate mr">moderate mr</option>
+								<option value=" mild to moderate mr">mild to moderate mr</option>
+							</select>
+                        </div>	
+						
+						<div class="input-field">
+                            <label>AO cms</label>
+                            <input type="number" id="AO cms" name="AO cms" value="2.3" step="0.01" required="">
+                        </div>
+
+						<div class="input-field">
+                            <label>Left Atrium</label>
+                            <select id="Left Atrium" name="Left Atrium">
+                            	<option value="normal">normal</option>
+								<option value="dilated">dilated</option>
+								<option value="mild dilated">mild dilated</option>
+								<option value="high dilated">high dilated</option>
+							</select>
+                        </div>
+						
+
+						<div class="input-field">
+                            <label>Mitral Valve</label>
+                            <select id="Mitral Valve" name="Mitral Valve">
+                            	<option value="normal">normal</option>
+								<option value="mac">mac</option>
+								<option value="prosthetic">prosthetic</option>
+								<option value="thickened">thickened</option>
+							</select>
+                        </div>	
+										
+						<div class="input-button">						
+							<input type="reset" value="Reset">
+						</div>
+						
+						<div class="input-button">
+							<input type="submit" value="submit">
+						</div>	
+					</div>
+				</div>
+                    
+            </div>
+
+				
+				
+                 
+        </form></div>
+
+  
+    
+
+
+
+</body></html>

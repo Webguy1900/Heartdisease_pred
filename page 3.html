@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://heart-disease-pred-v1.herokuapp.com/submitbin -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <!-- Gooogle Font -->
+    <link href="./page 3_files/css2" rel="stylesheet">
+	
+    <!-- Stylesheet -->
+	<style>
+	
+		*,
+		*:before,
+		*:after {
+		  padding: 0;
+		  margin: 0;
+		  box-sizing: border-box;
+		}
+		body{
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: url(/static//hm.jpg);
+				background-blend-mode: overlay;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+				
+		.main_container1{
+				width: 85%;
+				height: auto;
+				opacity : 89%;
+				border-radius: 6px;
+				padding:  30px;
+				margin: auto;
+				background-color: #fff;}
+				
+		.main_container{
+				width: 98%;
+				display:grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				border-radius: 6px;
+				padding: 30px;
+				margin: auto;
+				background-color: #fff;
+	
+				}
+				
+		.container{
+				position: relative;
+				width: 95%;
+				height: auto;
+				opacity : 89%;
+				border-radius: 6px;
+				margin: auto;
+				background-color: #fff;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+				}
+		.container2{
+				position: relative;
+				width: 95%;
+				height: auto;
+				opacity : 89%;
+				border-radius: 6px;
+				margin: auto;
+				margin-left: 55%;
+				margin-top: 10px;
+				background-color: #fff;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+				}
+		.container1{
+				position: relative;
+				width: 90%;
+				height: auto;
+				opacity : 89%;
+				border-radius: 6px;
+				margin: auto;
+				background-color: #fff;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+				}
+				
+		.circular-progress0,.circular-progress1, .circular-progress2, .circular-progress3, .circular-progress4{
+			  position: relative;
+			  height: 90%;
+			  width: 70%;
+			  border-radius: 50%;
+			  margin-top:5%;
+			  margin-left:15%;
+			  margin-right:15%;
+			  margin-bottom:5%;
+			  display: grid;
+			  place-items: center;
+			  background-image: linear-gradient(to right, rgba(45,80,0,0), rgba(150,0,0,0.5));
+		}
+		.circular-progress0:before, .circular-progress1:before, .circular-progress2:before, .circular-progress3:before, .circular-progress4:before{
+			  content: "";
+			  position: absolute;
+			  height: 75%;
+			  width: 70%;
+			  padding: 10px;
+			  background-color: #ffffff;
+			  border-radius: 50%;
+		}
+
+		.value-container0, .value-container1, .value-container2, .value-container3, .value-container4{
+			  position: relative;
+			  font-family: "Poppins", sans-serif;
+			  font-size: 35px;
+			  padding: 20px;
+			  color: #231c3d;
+
+		}
+
+		.v-c button{
+					
+				width: 90%;
+				margin-left: 5%;
+				font-size: 14px;
+				background-color: #fff;
+				border-radius: 25px ;
+				box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+				place-items: center;
+			}
+
+
+
+			.v-c-2 button{
+					
+					width: calc(100% / 5 - 15px);
+					padding: 5px 5px;
+					
+					margin: 5px;
+					font-size: 15px;
+					border-radius: 6px;
+					background-color: #fff;
+					border-radius: 25px ;
+					box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+					place-items: center;
+				}
+				
+			.overflow-ellipsis{
+			text-overflow: ellipsis;
+			
+			}
+			.v-c-2: after{
+				content = ";
+				clear : both;
+				display: table;
+			}
+
+
+
+
+		#button{
+				margin-left: 25%;
+				height: 25px;
+				width: 20%;
+				}
+					
+		h1{
+				height: 25px;
+				margin : auto;
+				display: block;}
+
+
+
+
+	</style>
+		
+  </head>
+  <body>
+
+	<div class="main_container1">
+	
+		<h1> Probabilites</h1>
+		<div class="main_container">
+		
+			<div class="container">
+				<div class="v-c">	
+					<button> Probability of Other Abnorm: `28%`</button>
+				</div>
+
+				<div class="circular-progress0" style="background: conic-gradient(rgb(173, 255, 47) 100.8deg, rgb(255, 255, 255) 100.8deg);">
+				<div class="value-container0">28%</div>
+
+				</div>
+			</div>
+			<div class="container">
+				<div class="v-c">	
+					<button> Probability of Normal Echo:`56%`</button>
+				</div>
+
+				<div class="circular-progress1" style="background: conic-gradient(rgb(152, 251, 152) 201.6deg, rgb(255, 255, 255) 201.6deg);">
+				<div class="value-container1">56%</div>
+
+				</div>
+			</div>
+			<div class="container">
+				<div class="v-c">	
+					<button> Probability of CAD IHD: `1%`</button>
+				</div>
+
+				<div class="circular-progress2" style="background: conic-gradient(rgb(0, 128, 0) 3.6deg, rgb(255, 255, 255) 3.6deg);">
+				<div class="value-container2">1%</div>
+
+				</div>
+			</div>
+			<div class="container2">
+				<div class="v-c">	
+					<button> Probability of DCM: `3%`</button>
+				</div>
+
+				<div class="circular-progress3" style="background: conic-gradient(rgb(0, 128, 0) 10.8deg, rgb(255, 255, 255) 10.8deg);">
+				<div class="value-container3">3%</div>
+
+				</div>
+			</div>			
+			<div class="container2">
+				<div class="v-c">	
+					<button> Probability of PHA: `4%`</button>
+				</div>
+
+				<div class="circular-progress4" style="background: conic-gradient(rgb(0, 128, 0) 14.4deg, rgb(255, 255, 255) 14.4deg);">
+				<div class="value-container4">4%</div>
+
+				</div>
+			</div> 
+			
+
+		</div>
+			<div class="container1">   
+				<div class="v-c-2">	
+					<button id="Mild" class="overflow-ellipsis" style="background: rgb(173, 255, 47); color: black;"> Other Abnor</button>
+					<button id="Moderate" class="overflow-ellipsis" style="background: rgb(152, 251, 152); color: black;"> Normal</button>
+					<button id="Elevated" class="overflow-ellipsis" style="background: rgb(0, 128, 0); color: white;"> CAD IHD</button>
+					<button id="Severe" class="overflow-ellipsis" style="background: rgb(0, 128, 0); color: white;"> DCM</button>
+					<button id="Extreme" class="overflow-ellipsis" style="background: rgb(0, 128, 0); color: white;"> PHA</button>
+				</div>
+				<form action="https://heart-disease-pred-v1.herokuapp.com/submit1" method="post">
+				<input id="button" type="reset" onclick="location.href = &#39;https://heart-disease-pred-v1.herokuapp.com/&#39;"> 
+			
+				<input id="button" type="submit" value="cause"></form>
+			</div>
+	</div>
+    <!-- Script -->
+    <script>
+	
+		var Mild = document.getElementById("Mild");
+		var Moderate = document.getElementById("Moderate");
+		var Elevated = document.getElementById("Elevated");
+		var Severe = document.getElementById("Severe");
+		var Extreme = document.getElementById("Extreme");
+		
+		
+		if(28 <= 20){
+			
+			var colo1 = '#008000';
+			Mild.style.background = '#008000';
+			Mild.style.color = 'white';}
+
+		else if((28 > 20) && (28 <= 40)){
+			
+			var colo1 = '#ADFF2F';
+			Mild.style.background = '#ADFF2F';
+			Mild.style.color = 'black';}
+
+		else if((28 > 40) && (28 <= 60)){
+			
+			var colo1 = '#98FB98';
+			Mild.style.background = '#98FB98';
+			Mild.style.color = 'black';}
+			
+		else if((28 > 60) && (28 <= 80)){
+			
+			var colo1 = '#F08080';
+			Mild.style.background = '#F08080';
+			Mild.style.color = 'black';}
+
+		else {
+			var colo1 = '#FF0000';
+			Mild.style.background = '#FF0000';
+			Mild.style.color = 'white';}
+			
+			
+		if(56 <= 20){
+			
+			var colo2 = '#008000';
+			Moderate.style.background = '#008000';
+			Moderate.style.color = 'white';}
+
+		else if((56 > 20) && (56 <= 40)){
+			
+			var colo2 = '#ADFF2F';
+			Moderate.style.background = '#ADFF2F';
+			Moderate.style.color = 'black';}
+
+		else if((56 > 40) && (56 <= 60)){
+			
+			var colo2 = '#98FB98';
+			Moderate.style.background = '#98FB98';
+			Moderate.style.color = 'black';}
+			
+		else if((56 > 60) && (56 <= 80)){
+			
+			var colo2 = '#F08080';
+			Moderate.style.background = '#F08080';
+			Moderate.style.color = 'black';}
+
+		else {
+			var colo2 = '#FF0000';
+			Moderate.style.background = '#FF0000';
+			Moderate.style.color = 'white';}	
+
+
+
+
+		if(1 <= 20){
+			
+			var colo3 = '#008000';
+			Elevated.style.background = '#008000';
+			Elevated.style.color = 'white';}
+
+		else if((1 > 20) && (1 <= 40)){
+			
+			var colo3 = '#ADFF2F';
+			Elevated.style.background = '#ADFF2F';
+			Elevated.style.color = 'black';}
+
+		else if((1 > 40) && (1 <= 60)){
+			
+			var colo3 = '#98FB98';
+			Elevated.style.background = '#98FB98';
+			Elevated.style.color = 'black';}
+			
+		else if((1 > 60) && (1 <= 80)){
+			
+			var colo3 = '#F08080';
+			Elevated.style.background = '#F08080';
+			Elevated.style.color = 'black';}
+
+		else {
+			var colo3 = '#FF0000';
+			Elevated.style.background = '#FF0000';
+			Elevated.style.color = 'white';}	
+			
+
+		if(3 <= 20){
+			
+			var colo4 = '#008000';
+			Severe.style.background = '#008000';
+			Severe.style.color = 'white';}
+
+		else if((3 > 20) && (3 <= 40)){
+			
+			var colo4 = '#ADFF2F';
+			Severe.style.background = '#ADFF2F';
+			Severe.style.color = 'black';}
+
+		else if((3 > 40) && (3 <= 60)){
+			
+			var colo4 = '#98FB98';
+			Severe.style.background = '#98FB98';
+			Severe.style.color = 'black';}
+			
+		else if((3 > 60) && (3 <= 80)){
+			
+			var colo4 = '#F08080';
+			Severe.style.background = '#F08080';
+			Severe.style.color = 'black';}
+
+		else {
+			var colo4 = '#FF0000';
+			Severe.style.background = '#FF0000';
+			Severe.style.color = 'white';}			
+			
+
+		if(4 <= 20){
+			
+			var colo5 = '#008000';
+			Extreme.style.background = '#008000';
+			Extreme.style.color = 'white';}
+
+		else if((4 > 20) && (4 <= 40)){
+			
+			var colo5 = '#ADFF2F';
+			Extreme.style.background = '#ADFF2F';
+			Extreme.style.color = 'black';}
+
+		else if((4 > 40) && (4 <= 60)){
+			
+			var colo5 = '#98FB98';
+			Extreme.style.background = '#98FB98';
+			Extreme.style.color = 'black';}
+			
+		else if((4 > 60) && (4 <= 80)){
+			
+			var colo5 = '#F08080';
+			Extreme.style.background = '#F08080';
+			Extreme.style.color = 'black';}
+
+		else {
+			var colo5 = '#FF0000';
+			Extreme.style.background = '#FF0000';
+			Extreme.style.color = 'white';}
+		
+		
+		var progressBar = document.querySelector(".circular-progress0");
+		var valueContainer = document.querySelector(".value-container0");
+
+		var progressValue = 0;
+		var progressEndValue = 100;
+		var limit = 28;
+		var speed = 25;
+		var progress = setInterval(() => {
+		  progressValue++;
+		  valueContainer.textContent = `${progressValue}%`;
+		  progressBar.style.background = `conic-gradient(
+			  ${colo1} ${progressValue * 3.6}deg,
+			  #ffffff ${progressValue * 3.6}deg
+			)`;
+			if (progressValue >= limit) {
+			clearInterval(progress);
+		  }
+		}, speed);
+	
+		var progressBar1 = document.querySelector(".circular-progress1");
+		var valueContainer1 = document.querySelector(".value-container1");
+		var progressValue1 = 0;
+		var progressEndValue1 = 100;
+		var limit1 = 56;
+		var progress1 = setInterval(() => {
+		  progressValue1++;
+		  valueContainer1.textContent = `${progressValue1}%`;
+		  progressBar1.style.background = `conic-gradient(
+			  ${colo2} ${progressValue1 * 3.6}deg,
+			  #ffffff ${progressValue1 * 3.6}deg
+			)`;
+			if (progressValue1 >= limit1) {
+			clearInterval(progress1);
+		  }
+		}, speed);
+		
+		
+		var progressBar2 = document.querySelector(".circular-progress2");
+		var valueContainer2 = document.querySelector(".value-container2");
+		var progressValue2 = 0;
+		var progressEndValue2 = 100;
+		var limit2 = 1;
+		var progress2 = setInterval(() => {
+		  progressValue2++;
+		  valueContainer2.textContent = `${progressValue2}%`;
+		  progressBar2.style.background = `conic-gradient(
+			  ${colo3} ${progressValue2 * 3.6}deg,
+			  #ffffff ${progressValue2 * 3.6}deg
+			)`;
+			if (progressValue2 >= limit2) {
+			clearInterval(progress2);
+		  }
+		}, speed);
+
+
+		var progressBar3 = document.querySelector(".circular-progress3");
+		var valueContainer3 = document.querySelector(".value-container3");
+		var progressValue3 = 0;
+		var progressEndValue3 = 100;
+		var limit3 = 3;
+		var progress3 = setInterval(() => {
+		  progressValue3++;
+		  valueContainer3.textContent = `${progressValue3}%`;
+		  progressBar3.style.background = `conic-gradient(
+			  ${colo4} ${progressValue3 * 3.6}deg,
+			  #ffffff ${progressValue3 * 3.6}deg
+			)`;
+			if (progressValue3 >= limit3) {
+			clearInterval(progress3);
+		  }
+		}, speed);	
+
+		var progressBar4 = document.querySelector(".circular-progress4");
+		var valueContainer4 = document.querySelector(".value-container4");
+		var progressValue4 = 0;
+		var progressEndValue4 = 100;
+		var limit4 = 4;
+		var progress4 = setInterval(() => {
+		  progressValue4++;
+		  valueContainer4.textContent = `${progressValue4}%`;
+		  progressBar4.style.background = `conic-gradient(
+			  ${colo5} ${progressValue4 * 3.6}deg,
+			  #ffffff ${progressValue4 * 3.6}deg
+			)`;
+			if (progressValue4 >= limit4) {
+			clearInterval(progress4);
+		  }
+		}, speed);
+
+
+	
+
+		
+
+		
+	</script>
+
+	
+	
+  
+</body></html>
